@@ -7,11 +7,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Login — Gitloom',
 };
-
+// file:///home/moonlitgrace/Downloads/dddepth-240.jpg
 export default function Page() {
   return (
-    <div className="grid min-h-dvh place-items-center">
-      <div className="flex w-full max-w-sm flex-col gap-4">
+    <div className="flex min-h-dvh items-center justify-center gap-8">
+      <div className="h-80 w-40 rounded-l-2xl bg-[url(/images/auth-bg.jpg)] bg-cover bg-no-repeat"></div>
+      <div className="flex w-max flex-col gap-4">
         <Link href={'/'} className="w-max">
           <GitloomIcon className="size-10" />
         </Link>
@@ -25,9 +26,7 @@ export default function Page() {
           <GithubIcon className="size-5" />
           Login with Github
         </Button>
-        <span className="text-muted-foreground text-center text-sm">
-          (More platforms coming soon.)
-        </span>
+        <span className="text-muted-foreground text-sm">(More platforms coming soon.)</span>
         <div className="mt-10 flex flex-col gap-2 text-sm">
           <span>GitloomLabs &copy; {new Date(Date.now()).getFullYear()}</span>
           <div className="text-muted-foreground flex items-center gap-2">
