@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const session = await auth();
-  console.log(session);
+  console.log(session?.user?.username);
 
   return (
     <div className="flex min-h-dvh items-center justify-center gap-8">
