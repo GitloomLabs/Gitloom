@@ -1,6 +1,7 @@
 import GithubIcon from '@/components/icons/github';
 import GitloomIcon from '@/components/icons/gitloom';
 import { Button } from '@/components/ui/button';
+import { auth, signIn } from '@/lib/auth';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -8,7 +9,10 @@ export const metadata: Metadata = {
   title: 'Login — Gitloom',
 };
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth();
+  console.log(session?.user);
+
   return (
     <div className="flex min-h-dvh items-center justify-center gap-8">
       <div className="h-80 w-40 rounded-l-2xl bg-[url(/images/auth-bg.jpg)] bg-cover bg-no-repeat"></div>
@@ -22,10 +26,18 @@ export default function Page() {
             Log in to weave content into your repo.
           </span>
         </div>
-        <Button size={'default'}>
-          <GithubIcon className="size-5" />
-          Login with Github
-        </Button>
+        <form
+          className="w-full"
+          action={async () => {
+            'use server';
+            await signIn('github');
+          }}
+        >
+          <Button size={'default'} className="w-full">
+            <GithubIcon className="size-5" />
+            Login with Github
+          </Button>
+        </form>
         <span className="text-muted-foreground text-sm">(More platforms coming soon.)</span>
         <div className="mt-auto flex flex-col gap-2 text-sm">
           <span>GitloomLabs &copy; {new Date(Date.now()).getFullYear()}</span>
