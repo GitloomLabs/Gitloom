@@ -58,7 +58,7 @@ export default function RepoList() {
   const { data: session, status } = useSession();
   const accessToken = session?.accessToken;
   const username = session?.user?.username;
-
+  console.log(session?.user)
   const [search, setSearch] = useState('');
   const debouncedSearch = useDebounce(search, 500);
 
@@ -77,18 +77,19 @@ export default function RepoList() {
   return (
     <>
       <div className="grid grid-cols-2 gap-4">
-        <Select defaultValue="moonlitgrace" disabled>
-          {status === 'loading' ? (
-            <Skeleton className="h-9 w-full" />
-          ) : (
+        {status === 'loading' ? (
+          <Skeleton className="h-9 w-full" />
+        ) : (
+          <Select defaultValue={String(username)} disabled>
             <SelectTrigger className="w-full">
-              <SelectValue />
+              <SelectValue placeholder="Select username" />
             </SelectTrigger>
-          )}
-          <SelectContent>
-            <SelectItem value={String(username)}>{username}</SelectItem>
-          </SelectContent>
-        </Select>
+            <SelectContent>
+              <SelectItem value={String(username)}>{username}</SelectItem>
+            </SelectContent>
+          </Select>
+        )}
+
         <InputRoot>
           <InputIcon>
             {debouncedSearch.length > 0 && isLoading ? (

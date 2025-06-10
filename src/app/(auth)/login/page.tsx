@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <div className="grid min-h-dvh grid-cols-2">
-      <div className="bg-card/50 grid place-items-center border-r">
+    <div className="grid min-h-dvh md:grid-cols-2">
+      <div className="bg-card/50 hidden px-6 lg:px-0 md:grid place-items-center border-r">
         <div className="flex w-full max-w-100 flex-col gap-4">
           <ShieldCheck className="text-muted-foreground size-15 stroke-1" />
           <h4 className="text-4xl font-black">Your data is yours.</h4>

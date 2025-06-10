@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <div className="mx-auto my-10 w-full max-w-5xl space-y-8">
-      <div className="flex flex-col gap-2">
+      <div className="flex  flex-col gap-2">
         <h3 className="text-4xl font-black">Let's do something new.</h3>
         <span className="text-muted-foreground text-sm">
           Select a repository to link with Gitloom and start managing your content.
         </span>
       </div>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8">
         <div className="bg-card/50 space-y-4 rounded-lg border p-4">
           <h5 className="text-xl font-bold">Import Git Repo</h5>
           <RepoList />
