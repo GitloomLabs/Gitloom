@@ -50,7 +50,9 @@ export default async function Page() {
           <form
             onSubmit={async () => {
               'use server';
-              await signIn('github');
+              await signIn('github', {
+                redirectTo: '/login/success',
+              });
             }}
           >
             <Button size={'default'} className="w-full">
