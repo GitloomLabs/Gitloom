@@ -30,7 +30,6 @@ export default function UserDropdown({ children }: { children: React.ReactNode }
             <span className="font-medium truncate">{name}</span>
             <span className="text-xs text-muted-foreground truncate">{email}</span>
           </a>
-
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
