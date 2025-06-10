@@ -22,7 +22,7 @@ export default async function Page() {
           <h4 className="text-4xl font-black">Your data is yours.</h4>
           <div className="text-muted-foreground flex gap-2 text-sm">
             <Box className="size-5 shrink-0" />
-            <span>Gitloom is decentralized and doesn't rely on any cetralized database.</span>
+            <span>Gitloom is decentralized and doesn&apos;t rely on any cetralized database.</span>
           </div>
           <div className="text-muted-foreground flex gap-2 text-sm">
             <FolderLock className="size-5 shrink-0" />

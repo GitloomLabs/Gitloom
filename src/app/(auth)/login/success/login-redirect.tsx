@@ -5,7 +5,7 @@ import { AnimatedCircularProgressBar } from '@/components/magicui/animated-circu
 import { LOCAL_STORAGE_KEYS } from '@/constants';
 import { cn, waitFor } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 interface Task {
   pending: boolean;
@@ -23,14 +23,17 @@ export default function LoginRedirect() {
     },
   ]);
 
-  function completeAllTasks(): void {
+  const completeAllTasks = useCallback(() => {
     setTasks((prev) => prev.map((t) => ({ ...t, pending: false })));
-  }
+  }, [setTasks]);
 
-  function addTask(task: Task): void {
-    completeAllTasks();
-    setTasks((prev) => [...prev, task]);
-  }
+  const addTask = useCallback(
+    (task: Task) => {
+      completeAllTasks();
+      setTasks((prev) => [...prev, task]);
+    },
+    [completeAllTasks, setTasks],
+  );
 
   useEffect(() => {
     (async () => {
@@ -53,7 +56,7 @@ export default function LoginRedirect() {
         router.push(`/new`);
       }
     })();
-  }, []);
+  }, [addTask, router]);
 
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center gap-4">
