@@ -7,6 +7,7 @@ import { ChevronsUpDown } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import UserDropdown from './profile-dropdown';
 
 export default function Header() {
   const { data: session } = useSession();
@@ -34,10 +35,12 @@ export default function Header() {
       </nav>
       <div className="flex items-center gap-4">
         <Button variant={'outline'}>Feedback</Button>
-        <Avatar>
-          <AvatarImage src={session?.user?.image ?? undefined} />
-          <AvatarFallback>{session?.user?.name}</AvatarFallback>
-        </Avatar>
+        <UserDropdown>
+          <Avatar>
+            <AvatarImage src={session?.user?.image ?? undefined} />
+            <AvatarFallback>{session?.user?.name}</AvatarFallback>
+          </Avatar>
+        </UserDropdown>
       </div>
     </header>
   );

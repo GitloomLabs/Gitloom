@@ -58,7 +58,7 @@ export default function RepoList() {
   const { data: session, status } = useSession();
   const accessToken = session?.accessToken;
   const username = session?.user?.username;
-  console.log(session?.user)
+  console.log(session?.user);
   const [search, setSearch] = useState('');
   const debouncedSearch = useDebounce(search, 500);
 
