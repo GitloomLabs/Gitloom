@@ -25,12 +25,12 @@ export default function UserDropdown({ children }: { children: React.ReactNode }
             href={`https://github.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground flex w-full flex-col text-sm font-normal"
+            className="flex w-full flex-col items-start !gap-0 text-sm font-normal text-foreground"
           >
-            {' '}
-            <span className="text-foreground font-medium">{name}</span>
-            <span className="text-muted-foreground text-xs font-normal">{email}</span>
+            <span className="font-medium truncate">{name}</span>
+            <span className="text-xs text-muted-foreground truncate">{email}</span>
           </a>
+
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
