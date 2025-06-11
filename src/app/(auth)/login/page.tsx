@@ -55,7 +55,7 @@ export default async function Page() {
               });
             }}
           >
-            <Button size={'default'} className="w-full">
+            <Button type='submit' size={'default'} className="w-full">
               <GithubIcon className="size-5" />
               Sign in with Github
             </Button>
