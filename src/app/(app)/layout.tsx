@@ -1,5 +1,5 @@
 import Footer from './_components/footer';
-import Header from './_components/header';
+import Header from './_components/header/header';
 
 export default function AppLayout({
   children,

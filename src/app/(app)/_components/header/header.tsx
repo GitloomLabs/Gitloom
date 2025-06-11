@@ -1,13 +1,13 @@
 'use client';
 
 import GitloomIcon from '@/components/icons/gitloom';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { ChevronsUpDown } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import UserDropdown from './profile-dropdown';
+import UserDropdown from './user-dropdown';
 
 export default function Header() {
   const { data: session } = useSession();
@@ -35,12 +35,7 @@ export default function Header() {
       </nav>
       <div className="flex items-center gap-4">
         <Button variant={'outline'}>Feedback</Button>
-        <UserDropdown>
-          <Avatar>
-            <AvatarImage src={session?.user?.image ?? undefined} />
-            <AvatarFallback>{session?.user?.name}</AvatarFallback>
-          </Avatar>
-        </UserDropdown>
+        <UserDropdown></UserDropdown>
       </div>
     </header>
   );
