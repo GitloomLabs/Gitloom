@@ -16,11 +16,10 @@ import useRepos from '@/hooks/use-repos';
 import datetime from '@/lib/date-time';
 import { Lock, Search } from 'lucide-react';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { RepoListSkeleton } from './repo-list-skeleton';
 
 export default function RepoList() {
-  const router = useRouter();
   const { data: session, status } = useSession();
   const { search, setSearch, debouncedSearch, repos, isLoading } = useRepos();
 
@@ -74,8 +73,8 @@ export default function RepoList() {
             <span className="text-muted-foreground text-sm">
               {datetime(repo.updated_at).fromNow()}
             </span>
-            <Button className="ml-auto" onClick={() => router.push(`/@${repo.name}`)}>
-              Import
+            <Button asChild className="ml-auto">
+              <Link href={`/@${repo.name}`}>Import</Link>
             </Button>
           </div>
         ))}
