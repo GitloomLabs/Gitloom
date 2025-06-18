@@ -6,13 +6,13 @@ import * as React from 'react';
 const spinnerVariants = cva('relative block opacity-[0.65]', {
   variants: {
     size: {
-      sm: 'size-4',
-      md: 'size6',
+      default: 'size-4',
+      md: 'size-6',
       lg: 'size-8',
     },
   },
   defaultVariants: {
-    size: 'sm',
+    size: 'default',
   },
 });
 

@@ -96,7 +96,7 @@ export default function RepoContents({ repo, setIsConfigDialogOpen }: Props) {
             </InputIcon>
             <Input placeholder="Search..." disabled />
           </InputRoot>
-          <Button size={'default'}>
+          <Button size={'md'}>
             <Plus />
             Add New
           </Button>
