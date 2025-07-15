@@ -112,8 +112,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0(prettier@3.6.0)(typescript@5.8.3)
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.12
-        version: 0.6.12(prettier-plugin-organize-imports@4.1.0(prettier@3.6.0)(typescript@5.8.3))(prettier@3.6.0)
+        specifier: ^0.6.14
+        version: 0.6.14(prettier-plugin-organize-imports@4.1.0(prettier@3.6.0)(typescript@5.8.3))(prettier@3.6.0)
       tailwindcss:
         specifier: ^4
         version: 4.1.8
@@ -2202,11 +2202,13 @@ packages:
       vue-tsc:
         optional: true
 
-  prettier-plugin-tailwindcss@0.6.12:
-    resolution: {integrity: sha512-OuTQKoqNwV7RnxTPwXWzOFXy6Jc4z8oeRZYGuMpRyG3WbuR3jjXdQFK8qFBMBx8UHWdHrddARz2fgUenild6aw==}
+  prettier-plugin-tailwindcss@0.6.14:
+    resolution: {integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-hermes': '*'
+      '@prettier/plugin-oxc': '*'
       '@prettier/plugin-pug': '*'
       '@shopify/prettier-plugin-liquid': '*'
       '@trivago/prettier-plugin-sort-imports': '*'
@@ -2225,6 +2227,10 @@ packages:
       prettier-plugin-svelte: '*'
     peerDependenciesMeta:
       '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-hermes':
+        optional: true
+      '@prettier/plugin-oxc':
         optional: true
       '@prettier/plugin-pug':
         optional: true
@@ -4800,7 +4806,7 @@ snapshots:
       prettier: 3.6.0
       typescript: 5.8.3
 
-  prettier-plugin-tailwindcss@0.6.12(prettier-plugin-organize-imports@4.1.0(prettier@3.6.0)(typescript@5.8.3))(prettier@3.6.0):
+  prettier-plugin-tailwindcss@0.6.14(prettier-plugin-organize-imports@4.1.0(prettier@3.6.0)(typescript@5.8.3))(prettier@3.6.0):
     dependencies:
       prettier: 3.6.0
     optionalDependencies:
